@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.FileProvider;
+
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.artikov.photototext.R;
 import com.artikov.photototext.data.Note;
@@ -149,14 +151,16 @@ public class PhotoCaptureActivity extends MvpAppCompatActivity implements PhotoC
     private void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, getPhotoUri());
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, TAKE_PHOTO_REQUEST_CODE);
         }
     }
 
     private Uri getPhotoUri() {
-        File photoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), getString(R.string.default_photo_name));
-        return Uri.fromFile(photoFile);
+        File file = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), getString(R.string.default_photo_name));
+        Uri photoFile = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", file);
+        return photoFile;
     }
 
     private void showNoteList() {

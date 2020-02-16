@@ -30,6 +30,16 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".ui.activities.NoteListActivity"/>
         <activity android:name=".ui.activities.SettingsActivity"/>
+
+        <provider
+            android:name=".data.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
     </application>
 
 </manifest>

@@ -2,12 +2,12 @@ package com.artikov.photototext.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.core.view.MenuItemCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -145,10 +145,10 @@ public class NoteListActivity extends MvpAppCompatActivity implements NoteListVi
     }
 
     private void initSearchView(MenuItem searchMenuItem) {
-        final SearchView searchView = (SearchView)searchMenuItem.getActionView();
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         String lastQuery = mPresenter.getLastQuery();
         if(!lastQuery.isEmpty()) {
-            searchMenuItem.expandActionView();
+            MenuItemCompat.expandActionView(searchMenuItem);
             searchView.setQuery(lastQuery, false);
         }
 

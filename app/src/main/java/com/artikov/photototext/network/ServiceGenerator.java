@@ -21,7 +21,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
  * @author Artur Artikov
  */
 public class ServiceGenerator {
-    private static final String BASE_URL = "http://cloud.ocrsdk.com/";
+    private static final String BASE_URL = "https://cloud.ocrsdk.com/";
     private static final String APPLICATION_ID = "Photo to text";
     private static final String PASSWORD = "WVpAfih/LoYIN/CpWk8oGF2U";
 

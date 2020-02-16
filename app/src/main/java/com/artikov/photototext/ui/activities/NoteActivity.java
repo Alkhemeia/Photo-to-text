@@ -1,8 +1,8 @@
 package com.artikov.photototext.ui.activities;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;

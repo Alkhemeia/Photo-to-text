@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,7 +26,7 @@
             android:layout_weight="4"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/choose_in_gallery_button"
+            app:srcCompat="@drawable/choose_in_gallery_button"
             tools:ignore="ContentDescription"/>
 
         <TextView
@@ -47,7 +48,7 @@
             android:layout_weight="4"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/take_photo_button"
+            app:srcCompat="@drawable/take_photo_button"
             tools:ignore="ContentDescription"/>
 
         <TextView
